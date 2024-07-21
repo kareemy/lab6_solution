@@ -1,4 +1,4 @@
-## Your Name:
+## Your Name: LAB 6 SOLUTION
 
 # CIDM 3312 Lab 6: Frontend 2
 

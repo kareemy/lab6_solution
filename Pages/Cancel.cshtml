@@ -1,0 +1,81 @@
+@page
+@model CancelModel
+@using lab6_solution.Models
+
+<h4 class="mb-3">ThoughtTronix Cancellation Request Form</h4>
+<form method="post" asp-page="Confirmation">
+    <div class="row mb-3">
+        <div class="col-6">
+            <div class="form-floating">
+                <input asp-for="CancelObject.FirstName" class="form-control" placeholder="First Name">
+                <label asp-for="CancelObject.FirstName" class="form-label"></label>
+            </div>
+            <span asp-validation-for="CancelObject.FirstName" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <input asp-for="CancelObject.LastName" class="form-control" placeholder="Last Name">
+                <label asp-for="CancelObject.LastName" class="form-label"></label>
+            </div>
+            <span asp-validation-for="CancelObject.LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <div class="form-floating">
+                <input asp-for="CancelObject.Email" class="form-control" placeholder="Email Address">
+                <label asp-for="CancelObject.Email" class="form-label"></label>
+            </div>
+            <span asp-validation-for="CancelObject.Email" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <input asp-for="CancelObject.Phone" class="form-control" placeholder="Phone Number">
+                <label asp-for="CancelObject.Phone" class="form-label"></label>
+            </div>
+            <span asp-validation-for="CancelObject.Phone" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row mb-3">
+        <div class="col-3">
+            <label class="form-label">Select the product you are cancelling:</label>
+            <select asp-for="CancelObject.Product" asp-items="Html.GetEnumSelectList<Product>()" class="form-select">
+                <option value="">Choose...</option>
+            </select>
+            <span asp-validation-for="CancelObject.Product" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check">
+                <input asp-for="CancelObject.AgreeToNDA" class="form-check-input" type="checkbox">
+                <label asp-for="CancelObject.AgreeToNDA" class="form-check-label"></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check">
+                <input asp-for="CancelObject.AgreeToLiability" class="form-check-input" type="checkbox">
+                <label asp-for="CancelObject.AgreeToLiability" class="form-check-label"></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check">
+                <input asp-for="CancelObject.AgreeToFee" class="form-check-input" type="checkbox">
+                <label asp-for="CancelObject.AgreeToFee" class="form-check-label"></label>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-4">
+    <button type="submit" class="btn btn-primary">Submit Cancellation Request</button>
+</form>
+
+<!-- Add JS code for Data Validation -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

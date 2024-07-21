@@ -1,0 +1,19 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('form').validate().settings.validClass += ' is-valid';
+        $('form').validate().settings.errorClass += ' is-invalid';
+
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function(value, element, param) {
+        if(element.type === 'checkbox') {
+            // if it's a checkbox return true if it is checked
+            return element.checked;
+        } else {
+            // otherwise run the default validation function
+            return defaultRangeValidator.call(this, value, element, param);
+        }
+    }
+    });
+</script>

@@ -1,0 +1,54 @@
+@page
+@model ConfirmationModel
+
+<h1>Cancellation Request Received</h1>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.FirstName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.FirstName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.LastName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.LastName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.Email)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.Email)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.Phone)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.Phone)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.Product)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.Product)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.AgreeToNDA)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.AgreeToNDA)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.AgreeToLiability)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.AgreeToLiability)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CancelObject.AgreeToFee)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.CancelObject.AgreeToFee)
+    </dd>
+</dl>
